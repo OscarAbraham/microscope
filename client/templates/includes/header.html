@@ -1,6 +1,7 @@
 <template name="header">
     <nav class="navbar navbar-default" role="navigation">
         <div class="container-fluid">
+            <!--menu button and home-->
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navigation">
                     <span class="sr-only">Toggle navigation</span>
@@ -10,7 +11,15 @@
                 </button>
                 <a class="navbar-brand" href="{{pathFor 'postsList'}}">Microscope</a>
             </div>
+            <!--submit post and login-->
             <div class="collapse navbar-collapse" id="navigation">
+                <!--submit post-->
+
+                <ul class="nav navbar-nav">
+                    {{#if currentUser}}<li><a href="{{pathFor 'postSubmit'}}">Submit Post</a></li>{{/if}}
+                </ul>
+
+                <!--login-->
                 <ul class="nav navbar-nav navbar-right">
                     {{> loginButtons}}
                 </ul>
